@@ -24,10 +24,54 @@
 
 \usepackage{tcolorbox}
 
+\usepackage{multicol}
+
 \hypersetup{colorlinks = true, linkcolor=colorlink}
 
 \usepackage{enumitem}
 \setlist[itemize]{label=\textcolor{color2}{\tiny $\blacksquare$}}
+
+\usepackage{listings}
+
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeorange}{HTML}{E66100}
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegray},
+    keywordstyle=\color{codeorange},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codeorange},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=4pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+	frame=leftline,
+	framexleftmargin=5mm,
+	frame=shadowbox,
+	rulesepcolor=\color{codeorange},
+	captionpos=t,
+	xleftmargin=.05\textwidth,
+	xrightmargin=.02\textwidth,
+	basicstyle=\small
+}
+
+\lstset{style=mystyle}
+
+\lstset{
+    language={[LaTeX]TeX},
+    literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {ñ}{{\~n}}1 
+}
+
 
 % ******** Math ******** %
 

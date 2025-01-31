@@ -9,3 +9,29 @@ Mostrar algunos ejemplos básicos, para que la gente tenga una idea del código 
 Indicar dónde se puede obtener más información sobre cómo escribir cosas con \LaTeX, \href{https://ctan.org/}{CTAN},  documentación de \href{https://www.overleaf.com/learn}{Overleaf}, \href{https://tex.stackexchange.com/}{\TeX{} Stack Exchange}, \href{https://www.latex-project.org/help/documentation/}{The \LaTeX{}   Project}
     
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Ejemplos}
+\framesubtitle{Hola mundo!}
+
+Como es habitual con muchos lenguajes, veamos cómo hacer nuestro "Hola mundo!":
+
+\begin{multicols}{2}
+\begin{lstlisting}[title={hola\_mundo.tex}]
+\documentclass{article}
+
+\begin{document}
+
+Hola mundo!
+
+\end{document}
+\end{lstlisting}
+
+\begin{figure}
+hola\_mundo.pdf
+\includegraphics[width=0.35\textwidth]{../images/ejemplo_hola_mundo.png}
+\end{figure}
+
+\end{multicols}
+
+\end{frame}
