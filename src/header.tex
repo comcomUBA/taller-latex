@@ -21,6 +21,7 @@
 \setbeamercolor{block title}{bg=color1,fg=black}
 
 % ******** Envs ******** %
+\usepackage{minted}
 
 \usepackage{tcolorbox}
 
@@ -74,6 +75,22 @@
     {ñ}{{\~n}}1 {¿}{{\textquestiondown}}1 {?}{{?}}1 
 }
 
+% ******** newcommands ********* %
+\newcommand{\cmd}[1]{{\color[HTML]{008000}\bftt{#1}}}
+
+\newenvironment{exampletwoup}
+  {\VerbatimEnvironment
+   \begin{VerbatimOut}{example.out}}
+  {\end{VerbatimOut}
+   \setlength{\parindent}{0pt}
+   \fbox{\begin{tabular}{l|l}
+   \begin{minipage}{0.55\linewidth}
+     \inputminted[fontsize=\small,resetmargins]{latex}{example.out}
+   \end{minipage} &
+   \begin{minipage}{0.35\linewidth}
+     \input{example.out}
+   \end{minipage}
+   \end{tabular}}}
 
 % ******** Math ******** %
 

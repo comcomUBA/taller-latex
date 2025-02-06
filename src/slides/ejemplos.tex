@@ -1,20 +1,99 @@
 \section{Ejemplos}\label{sec:ejemplos}
 
-\begin{frame}
-\frametitle{Ejemplos}
-Mostrar algunos ejemplos básicos, para que la gente tenga una idea del código que produce distintas cosas, uso de paquetes.
+% \begin{frame}
+% \frametitle{Ejemplos}
+% Mostrar algunos ejemplos básicos, para que la gente tenga una idea del código que produce distintas cosas, uso de paquetes.
 
-\
+% \
 
-Indicar dónde se puede obtener más información sobre cómo escribir cosas con \LaTeX, \href{https://ctan.org/}{CTAN},  documentación de \href{https://www.overleaf.com/learn}{Overleaf}, \href{https://tex.stackexchange.com/}{\TeX{} Stack Exchange}, \href{https://www.latex-project.org/help/documentation/}{The \LaTeX{}   Project}
+% Indicar dónde se puede obtener más información sobre cómo escribir cosas con \LaTeX, \href{https://ctan.org/}{CTAN},  documentación de \href{https://www.overleaf.com/learn}{Overleaf}, \href{https://tex.stackexchange.com/}{\TeX{} Stack Exchange}, \href{https://www.latex-project.org/help/documentation/}{The \LaTeX{}   Project}
+    
+% \end{frame}
+\begin{frame}[fragile]{Comenzando}
+    \framesubtitle{¿Cómo funciona?}
+    \begin{itemize}
+        \item Se escribe tu documento en \texttt{texto plano} con comandos que describen su estructura y significado.
+        \item El programa de \texttt{latex} procesa tu texto y comandos y produce un documento formateado.
+    \end{itemize}
+    \vskip 2ex
+    \begin{center}
+    \begin{minted}{latex}
+    El universo (que otros llaman la \emph{Biblioteca})
+    se compone de un número indefinido,
+    y tal vez infinito, de galerías hexagonales(...).
+    \end{minted}
+    \vskip 2ex
+    \usetikzlibrary {arrows.meta}
+    \begin{tikzpicture}
+    \draw[->]        (0,0)   -- (0,-1);
+    \end{tikzpicture}
+    \vskip 2ex
+    \fbox{El universo (que otros llaman la \emph{Biblioteca})(...).}
+    \end{center}
     
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Ejemplos}
+\begin{frame}[fragile]{Comenzando}
+    \framesubtitle{Otros ejemplos}
+
+    \begin{exampletwoup}
+    \begin{itemize}
+    \item Mate
+    \item Café
+    \item Harina
+    \item Palmitos
+    \end{itemize}
+    \end{exampletwoup}
+    \vskip 2ex
+    \begin{exampletwoup}
+    \begin{equation}
+    \alpha + \beta + 1
+    \end{equation}
+    \end{exampletwoup}
+\end{frame}
+
+\begin{frame}[fragile]{Comenzando}
+    \framesubtitle{Camiando la actitud}
+    \begin{itemize}
+        \item Se usan comandos para describir el 'qué', en vez de 'como se ve'.
+        \item Hay que enfocarse en el contenido.
+        \item \LaTeX{} se encarga del resto.
+        
+    \end{itemize}
+
+    
+\end{frame}
+
+\begin{frame}[fragile]{Comenzando}
 \framesubtitle{Hola mundo!}
 
 Como es habitual con muchos lenguajes, veamos cómo hacer nuestro "Hola mundo!":
+
+\begin{multicols}{2}
+\begin{lstlisting}[title={hola\_mundo.tex}]
+\documentclass{article}
+
+\begin{document}
+
+Hola mundo! %esto es un comentario
+
+\end{document}
+\end{lstlisting}
+
+\begin{figure}
+hola\_mundo.pdf
+\includegraphics[width=0.35\textwidth]{../images/ejemplo_hola_mundo.png}
+\end{figure}
+
+\end{multicols}
+\pause
+Tal vez parece mucho texto de \LaTeX\ para que el resultado sea sólo una línea. Pero veamos cual es el rol de cada parte del documento.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Comenzando}
+\framesubtitle{Hola mundo!}
 
 \begin{multicols}{2}
 \begin{lstlisting}[title={hola\_mundo.tex}]
@@ -26,16 +105,18 @@ Hola mundo!
 
 \end{document}
 \end{lstlisting}
+\vspace*{\fill}
+\columnbreak
 
-\begin{figure}
-hola\_mundo.pdf
-\includegraphics[width=0.35\textwidth]{../images/ejemplo_hola_mundo.png}
-\end{figure}
+\begin{itemize}
+    \item Los comandos comienzan con un \textbackslash.
+    \item Todo documento comienza con un \textit{documentclass}. Define la estructura general del documento. Esto incluye la fuente, el tamaño de la letra, el tamaño del papel, entre otros.    
+    \item El símbolo de porciento empieza un \emph{comentario} -- \LaTeX{} va a ignorar el resto de la línea.
+\end{itemize}
+
 
 \end{multicols}
-
 \end{frame}
-
 
 \begin{frame}[fragile]
 \frametitle{Ejemplos}
