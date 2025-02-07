@@ -18,17 +18,23 @@
     \vskip 2ex
     \begin{center}
     \begin{minted}{latex}
-    El universo (que otros llaman la \emph{Biblioteca})
-    se compone de un número indefinido,
-    y tal vez infinito, de galerías hexagonales(...).
+    El universo (que otros llaman la \emph{Biblioteca}) \\
+    se compone de un número \textbf{indefinido}, \\
+    y tal vez infinito, de galerías \underline{hexagonales}.
     \end{minted}
     \vskip 2ex
     \usetikzlibrary {arrows.meta}
     \begin{tikzpicture}
-    \draw[->]        (0,0)   -- (0,-1);
+    \draw[->]        (0,0)  -- (0,-1);
     \end{tikzpicture}
     \vskip 2ex
-    \fbox{El universo (que otros llaman la \emph{Biblioteca})(...).}
+    \begin{tcolorbox}[minipage,colback=white,arc=0pt,outer arc=0pt]
+        \centering
+        El universo (que otros llaman la \emph{Biblioteca}) \\
+        se compone de un número \textbf{indefinido}, \\
+        y tal vez infinito, de galerías \underline{hexagonales}.
+    \end{tcolorbox}
+
     \end{center}
     
 \end{frame}
@@ -101,7 +107,7 @@ Tal vez parece mucho texto de \LaTeX\ para que el resultado sea sólo una línea
 
 \begin{document}
 
-Hola mundo!
+Hola mundo! %esto es un comentario
 
 \end{document}
 \end{lstlisting}
@@ -111,7 +117,7 @@ Hola mundo!
 \begin{itemize}
     \item Los comandos comienzan con un \textbackslash.
     \item Todo documento comienza con un \textit{documentclass}. Define la estructura general del documento. Esto incluye la fuente, el tamaño de la letra, el tamaño del papel, entre otros.    
-    \item El símbolo de porciento empieza un \emph{comentario} -- \LaTeX{} va a ignorar el resto de la línea.
+    \item El símbolo de porciento empieza un \emph{comentario} -- \LaTeX{} va a ignorar el resto de la línea. \% y \textbackslash\ son caracteres especiales.
 \end{itemize}
 
 
