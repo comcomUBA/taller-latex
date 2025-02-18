@@ -2,7 +2,7 @@
 TEX = clase
  
 $(TEX).pdf:
-	pdflatex $(TEX).tex
+	pdflatex -shell-escape $(TEX).tex
 
 .PHONY: clean
 clean:
