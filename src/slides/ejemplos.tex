@@ -61,13 +61,20 @@
 \begin{frame}[fragile]{Comenzando}
     \framesubtitle{Cambiando la actitud}
     \begin{itemize}
-        \item Se usan comandos para describir el 'qué', en vez de 'como se ve'.
-        \item Hay que enfocarse en el contenido.
-        \item \LaTeX{} se encarga del resto.
+        \item Usar \LaTeX\ nos provee una separación entre el \textbf{contenido} del documento y el \textbf{estilo}. Se usan comandos para describir el 'qué', en vez de 'como se ve' (nos enfocamos en el contenido y \LaTeX{}  se encarga del resto).
+        \item Como contraejemplo, un editor de texto plano, o un programa Word pertenecen a una forma de mostrar información llamada \say{What You See Is Whay You Get} (WYSIWYG).
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Comenzando}
+    \framesubtitle{Cambiando la actitud}
+    \begin{itemize}
+        \item Una vez escrito el contenido del documento, el estilo se puede cambiar con facilidad. No hay necesidad de reformatear las cosas a mano.
+        \item Se puede también escribir un archivo de estilo propio (o descargarlo de internet), y aplicarlo a los documentos que quisiéramos.
         
     \end{itemize}
 
-    
 \end{frame}
 
 
@@ -127,7 +134,7 @@ Hola mundo! %esto es un comentario
 \begin{frame}[fragile]{Formateando texto}
     \small
     \begin{itemize}
-    \item Todo el texto va dentro del begin y end.
+    \item Todo el cuerpo del documento va dentro del \textbackslash\ begin\{document\} y \textbackslash\ end\{document\}.
     \item Casi siempre se puede escribir texto normalmente.
     \begin{exampletwouptiny}
     Las palabras se separan 
@@ -153,8 +160,19 @@ Hola mundo! %esto es un comentario
 
 \begin{frame}[fragile]{Ejercicio}
 
-    % pensar en ejercicio que tengan que tipear con caracteres especiales. capaz tambien alguna fórmula. se me ocurre el problema de la paradoja del cumpleaños, en wikipedia hay codigo, probabilidades escritas en latex.
-    % estaría bueno algo que tenga citas, porcentajes, capaz alguna cuenta? 
+    Escribamos en \LaTeX{}  este mismo texto.
+
+    \begin{tcolorbox}[colframe=color1]
+        \begin{center}
+            ¡Llegaron los resultados de la carrera!
+            \begin{enumerate}
+            \item En primer lugar, y recibiendo un premio de \$0 llega Alice.
+            \item En segundo lugar, a nada de ser ganar el lugar \#1, llega Bob.
+            \item Por último, pero incrementando su participación en carreras desde la última temporada en un 120\%, llega Charlie.
+            \item $\ldots$
+            \end{enumerate}
+        \end{center}
+    \end{tcolorbox}
     
 \end{frame}
 
@@ -197,12 +215,23 @@ donde $a$, $b$ y $c$ son \ldots
     \end{itemize}
     \vskip 1em
 {\scriptsize Cuidado: \LaTeX{} generamente ignora los espacios en matemática, pero no soporta inserción de líneas en blanco.}
+
 \end{frame}
-
-\begin{frame}{ejercicio}
-
-    % acá iria algun ejercicio que combine matematica con typesetting
-    
+\begin{frame}[fragile]{Matemáticas}
+    \framesubtitle{Ecuaciones}
+    \begin{itemize}
+        \item Si tu ecuación es muy importante, podés mostrarla dentro del entorno \emph{equation}.
+\begin{exampletwouptiny}
+Las raices de una ecuación cuadrática son
+\begin{equation}
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}
+            {2a}
+\end{equation}
+donde $a$, $b$ y $c$ son \ldots
+\end{exampletwouptiny}
+    \end{itemize}
+    \vskip 1em
+{\scriptsize Cuidado: \LaTeX{} generamente ignora los espacios en matemática, pero no soporta inserción de líneas en blanco.}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -301,4 +330,64 @@ Mientras que utilizando el paquete \href{https://ctan.org/pkg/hyperref}{hyperref
 
 Lo cual resulta más prolijo para enlazar URLs, secciones de un informe, referencias, etc.
 
+\end{frame}
+
+\begin{frame}[fragile]{Código}
+Un escenario común, es el querer incluir código en nuestro documento. Por ejemplo:
+
+\
+
+\textbackslash begin\{lstlisting\}[language=c] \\
+int sumar(int x, int y) \{ \\
+$~~~~~~~$ return x + y; \\
+\} \\
+\textbackslash end\{lstlisting\}
+
+\
+
+\begin{lstlisting}[language=c]
+int sumar(int x, int y) {
+    return x + y;
+}
+\end{lstlisting}
+
+Y para ello utilizamos el paquete \emph{listings}
+
+\end{frame}
+
+\begin{frame}[fragile]{Ejercicio}
+    Escribamos en \LaTeX{}  este mismo texto. 
+    
+    \begin{tcolorbox}[colframe=color1]
+        (\ldots) teniendo en cuenta esto, podemos definir el \textbf{teorema de Bayes} como:
+        \[P(A|B) = \frac{P(A|B)P(A)}{P(B)}\]
+        para utilizar esto, queremos primero implementar la función \texttt{probaCondicional} de la siguiente manera
+\begin{lstlisting}[language=python]
+probaCondicional(A, B):
+    numerador   = proba(interseccion(A, B))
+    denominador = proba(B)       
+    return division(numerador, denominador)
+\end{lstlisting}
+\end{tcolorbox}
+    
+\end{frame}
+
+\begin{frame}[fragile]{Ejercicio}
+A su vez, quizás queremos incluir gráficos en algún informe o presentación. Esto lo podemos hacer con el entorno \texttt{figure} y la función \textbackslash includegraphics. De esta forma:
+
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{figure}[h]
+    \centering
+    \includegraphics{../images/lion.png}
+    \caption{Titulo.}
+\end{figure}
+\end{lstlisting}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textheight]{../images/lion.png}
+    \caption{Titulo.}
+\end{figure}
+\end{multicols}
 \end{frame}

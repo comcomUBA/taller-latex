@@ -2,40 +2,58 @@
 
 \begin{frame}
 \frametitle{Ejercicio}
-\begin{center}
+\framesubtitle{Pseudocódigo}
 
-Proponer algunos ejercicios. Ideas:
-
-\begin{itemize}
-%\item Algo similar a un hola mundo
-%\item Un documento simple A4 con título, autoría y fecha.
-\item Un ejemplo de fórmula matemática "medio compleja" (hacer cosas subíndices y supraíndices), espaciado. Cómo usar el modo mátemático
-\item Ejemplo donde se use colores/formatos + armar macros con ellos
-\item Usar matrices o tablas
-%\item Armar un algoritmo con un paquete para hacer pseudocógido
-\item Incluir una imagen, varias imágenes. cambiar su tamaño o posición.
-%\item Incluir código, como configurar el diseño con el paquete lstlisting
-\item Armar diapos (charlar sobre distintos tipos de documentos, beamer, article, minimal, etc)
-\item Usar Tikz (algo básico)
-\end{itemize}
-
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Ejercicio - 1}
-\framesubtitle{Modelo de TP}
-
-Vamos a hacer un simulacro de informe. El TP que tenemos que entregar gira en torno a algoritmos vistos en una materia, y en su informe tenemos que escribir el pseudocódigo de uno de estos algoritmos, junto con su implementación. \pause
+Por último, queremos tomar un paso atrás  poder escribir en abstracto un pesudocógido, más allá del lenguaje en el que lo implementemos.
 
 \
 
-Queremos tener un informe para entregar que conste de:
+Para ello, podemos utilizar el paquete \texttt{algpseudocode} con el entorno \texttt{algorithmic}. Y dentro del mismo, incorporamos el pseudocódigo de nuestro programa.
 
-\begin{itemize}
-\item Carátula con nombre del TP, integrantes, fecha. \pause
-\item Una primer página con una síntesis del contenido del informe, con palabras clave del mismo y una tabla de contenidos. \pause
-\item A continuación, tres secciones. La primera con la consigna, la segunda con el pseudocódigo y la tercera con la implementación.
-\end{itemize}
+\begin{multicols}{2}
+
+Por ejemplo, si queremos escribir un condicional $if$, usamos \\
+
+\textbackslash If\{a\} \\
+$~~~~~~$\textbackslash State b \\
+\textbackslash Else \\
+$~~~~~~$\textbackslash State c \\
+\textbackslash EndIf \\
+
+\pause
+
+O si queremos un ciclo de iteración $for$ \\
+
+\textbackslash For\{$i \in 1,\ldots,n$\} \\
+$~~~~~~$\textbackslash State $a \gets a + i$ \\
+\textbackslash EndFor
+
+\
+
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio}
+\framesubtitle{Pseudocódigo}
+
+Con ello, escribamos el siguiente pseudocódigo:
+
+\begin{tcolorbox}[colframe=color1]
+\begin{center}
+\begin{algorithmic}
+    \Function{sumarTuplas}{tuplas}
+        \State $suma \gets (0,0)$
+        \If{$tupla \neq \{\}$}
+        \For{$i = 1, \ldots, |tuplas|$}
+            \State $suma_1 \gets tupla[i]_1$
+            \State $suma_2 \gets tupla[i]_2$
+        \EndFor
+        \EndIf
+        \State \Return $suma$
+    \EndFunction
+\end{algorithmic}
+\end{center}
+\end{tcolorbox}
 
 \end{frame}
