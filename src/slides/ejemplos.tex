@@ -1,14 +1,5 @@
 \section{Ejemplos}\label{sec:ejemplos}
 
-% \begin{frame}
-% \frametitle{Ejemplos}
-% Mostrar algunos ejemplos básicos, para que la gente tenga una idea del código que produce distintas cosas, uso de paquetes.
-
-% \
-
-% Indicar dónde se puede obtener más información sobre cómo escribir cosas con \LaTeX, \href{https://ctan.org/}{CTAN},  documentación de \href{https://www.overleaf.com/learn}{Overleaf}, \href{https://tex.stackexchange.com/}{\TeX{} Stack Exchange}, \href{https://www.latex-project.org/help/documentation/}{The \LaTeX{}   Project}
-    
-% \end{frame}
 \begin{frame}[fragile]{Comenzando}
     \framesubtitle{¿Cómo funciona?}
     \begin{itemize}
@@ -134,7 +125,7 @@ Hola mundo! %esto es un comentario
 \begin{frame}[fragile]{Formateando texto}
     \small
     \begin{itemize}
-    \item Todo el cuerpo del documento va dentro del \textbackslash\ begin\{document\} y \textbackslash\ end\{document\}.
+    \item Todo el cuerpo del documento va dentro del \textbackslash begin\{document\} y \textbackslash end\{document\}.
     \item Casi siempre se puede escribir texto normalmente.
     \begin{exampletwouptiny}
     Las palabras se separan 
@@ -147,7 +138,7 @@ Hola mundo! %esto es un comentario
     \begin{exampletwouptiny}
 
     El     universo    se compone 
-    de un           número(\dots)
+    de un           número(\ldots)
         
     \end{exampletwouptiny}
     \item Hay algunos caracteres con significados especiales en \LaTeX{}. Si los escribís, te va a dar un error. Tenés que escaparlos con un \textbackslash.
@@ -174,9 +165,11 @@ Hola mundo! %esto es un comentario
         \end{center}
     \end{tcolorbox}
     
+    \    
+    
     \begin{center}
     \fbox{\href{\wlnewdoc{template.tex}}{%
-    Clicken aca para abrir un template en Overleaf}}
+    Hacer click para abrir un template en Overleaf}}
     \end{center}
     
 \end{frame}
@@ -348,7 +341,7 @@ Y para ello utilizamos el paquete \emph{listings}
     
     \begin{tcolorbox}[colframe=color1]
         (\ldots) teniendo en cuenta esto, podemos definir el \textbf{teorema de Bayes} como:
-        \[P(A|B) = \frac{P(A|B)P(A)}{P(B)}\]
+        \[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]
         para utilizar esto, queremos primero implementar la función \texttt{probaCondicional} de la siguiente manera
 \begin{lstlisting}[language=python]
 probaCondicional(A, B):
