@@ -342,7 +342,7 @@ int sumar(int x, int y) {
         \[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]
         para utilizar esto, queremos primero implementar la función \texttt{probaCondicional} de la siguiente manera
 \begin{lstlisting}[language=python]
-probaCondicional(A, B):
+def probaCondicional(A, B):
     numerador   = proba(interseccion(A, B))
     denominador = proba(B)       
     return division(numerador, denominador)
