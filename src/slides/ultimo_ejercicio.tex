@@ -10,9 +10,29 @@ Por último, queremos poder tomar un paso atrás y escribir en abstracto un pesu
 
 Para ello, podemos utilizar el \textcolor{codeorange}{paquete} \texttt{algpseudocode} con el \textcolor{codeorange}{entorno} \texttt{algorithmic}. Y dentro del mismo, incorporamos el pseudocódigo de nuestro programa (noten el uso de mayúsculas para cada comando).
 
+\pause
+
+\
+
+
+Un bloque $function$: \\
+
+\textbackslash begin\{algorithmic\} \\
+\textbackslash Function\{\texttt{nombre}\}\{$p_1, p_2,\ldots$\} \\
+\hspace*{15pt} \textbackslash State $suma \gets 2$ \\
+\textbackslash EndFunction \\
+\textbackslash end\{algorithmic\}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio}
+\framesubtitle{Pseudocódigo}
+
+
 \begin{multicols}{2}
 
-Por ejemplo, si queremos escribir un condicional $if$-$else$, usamos \\
+Un condicional $if$-$else$: \\
 
 \textbackslash If\{a\} \\
 \hspace*{15pt} \textbackslash State b \\
@@ -20,15 +40,22 @@ Por ejemplo, si queremos escribir un condicional $if$-$else$, usamos \\
 \hspace*{15pt} \textbackslash State c \\
 \textbackslash EndIf \\
 
-\pause
+\
 
-O si queremos un ciclo de iteración $for$ \\
+\
+
+Ciclo $for$: \\
 
 \textbackslash For\{$i \in 1,\ldots,n$\} \\
 \hspace*{15pt} \textbackslash State $a \gets a + i$ \\
 \textbackslash EndFor
 
 \
+
+Retorno: \\
+
+\textbackslash State \textbackslash Return $res$ \\
+
 
 \end{multicols}
 \end{frame}
@@ -55,5 +82,7 @@ Con ello, escribamos el siguiente pseudocódigo:
 \end{algorithmic}
 \end{center}
 \end{tcolorbox}
+
+Fijense que algunos símbolos necesitan ser escapados o escribirse en modo matemático
 
 \end{frame}
