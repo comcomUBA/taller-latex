@@ -1,0 +1,59 @@
+\section{Ejercicios}\label{ejercicios}
+
+\begin{frame}
+\frametitle{Ejercicio}
+\framesubtitle{Pseudocódigo}
+
+Por último, queremos poder tomar un paso atrás y escribir en abstracto un pesudocódigo, más allá del lenguaje en el que lo implementemos.
+
+\
+
+Para ello, podemos utilizar el paquete \texttt{algpseudocode} con el entorno \texttt{algorithmic}. Y dentro del mismo, incorporamos el pseudocódigo de nuestro programa (noten el uso de mayúsculas para cada función).
+
+\begin{multicols}{2}
+
+Por ejemplo, si queremos escribir un condicional $if$-$else$, usamos \\
+
+\textbackslash If\{a\} \\
+$~~~~~~$\textbackslash State b \\
+\textbackslash Else \\
+$~~~~~~$\textbackslash State c \\
+\textbackslash EndIf \\
+
+\pause
+
+O si queremos un ciclo de iteración $for$ \\
+
+\textbackslash For\{$i \in 1,\ldots,n$\} \\
+$~~~~~~$\textbackslash State $a \gets a + i$ \\
+\textbackslash EndFor
+
+\
+
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio}
+\framesubtitle{Pseudocódigo}
+
+Con ello, escribamos el siguiente pseudocódigo:
+
+\begin{tcolorbox}[colframe=color1]
+\begin{center}
+\begin{algorithmic}
+    \Function{sumarTuplas}{tuplas}
+        \State $suma \gets (0,0)$
+        \If{$tupla \neq \{\}$}
+        \For{$i = 1, \ldots, |tuplas|$}
+            \State $suma_1 \gets tupla[i]_1$
+            \State $suma_2 \gets tupla[i]_2$
+        \EndFor
+        \EndIf
+        \State \Return $suma$
+    \EndFunction
+\end{algorithmic}
+\end{center}
+\end{tcolorbox}
+
+\end{frame}
